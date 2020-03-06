@@ -18,6 +18,12 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
+            //DbContext dbContext = new DbContext();
+            //House stark = new House("Stark", "Winter Is Coming", )
+            //if(!dbConext.Houses.Contains("Stark")
+            //{
+            //      dbContext.Houses.Add(Stark)
+
         }
     }
 }

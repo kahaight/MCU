@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace MCUWebAPPTest.Models
 {
-    public class ClassesController : ApiController
+    public class CharacterController : ApiController
     {
         private ClassesService CreateClassesService()
         {

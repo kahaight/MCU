@@ -69,6 +69,18 @@ namespace MCUWebAPPTest.Models
             }
         }
 
+        public List<string> GetMovieStrings(int actorId)
+        {
+            List<string> movieStrings = new List<string>();
+
+            IEnumerable<MovieListItem> movies = GetMovies(actorId);
+            foreach(MovieListItem movie in movies)
+            {
+                movieStrings.Add(movie.Title);
+            }
+            return movieStrings;
+        }
+
         public List<CharacterMovieListItem> GetCharacterMovieMovieIds(int actorId)
         {
             //List<CharacterMovie> characterMovies = new List<CharacterMovie>();
@@ -90,6 +102,8 @@ namespace MCUWebAPPTest.Models
 
         }
 
+
+
         public List<int> GetMovieIdsFromList(List<CharacterMovieListItem> characterMovies)
         {
             List<int> movieIds = new List<int>();
@@ -99,6 +113,8 @@ namespace MCUWebAPPTest.Models
             }
             return movieIds;
         }
+
+
 
         public CharacterDetail GetCharacterById(int id)
         {
@@ -113,7 +129,7 @@ namespace MCUWebAPPTest.Models
                     {
                         RealName = entity.RealName,
                         AlterEgo = entity.AlterEgo,
-                        Movies = GetMovies(id)
+                        Movies = GetMovieStrings(id)
                     };
             }
         }

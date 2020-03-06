@@ -14,6 +14,7 @@ namespace MCURelationalTest
         [Key]
         public int Id { get; set; }
         public string Title { get; set; }
+        //public virtual ICollection<Character> Characters { get; set; }
     }
 
     public class Character
@@ -22,16 +23,22 @@ namespace MCURelationalTest
         public int Id { get; set; }
         public string RealName { get; set; }
         public string AlterEgo { get; set; }
+        //public virtual ICollection<Movie> Movies { get; set; }
     }
 
     public class CharacterMovie
     {
         [Key]
         public int Id { get; set; }
+
+
         [ForeignKey(nameof(Movie))]
         public int MovieId { get; set; }
+
+
         [ForeignKey(nameof(Character))]
         public int CharacterId { get; set; }
+
         public virtual Movie Movie { get; set; }
         public virtual Character Character { get; set; }
 
@@ -56,7 +63,7 @@ namespace MCURelationalTest
     {
         public string RealName { get; set; }
         public string AlterEgo { get; set; }
-        public IEnumerable<MovieListItem> Movies { get; set; }
+        public IEnumerable<string> Movies { get; set; }
     }
 
     public class CharacterMovieCreate
